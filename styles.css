@@ -1,0 +1,353 @@
+/* ============================================
+   USAF Aircraft Wiki — shared stylesheet
+   ============================================ */
+
+:root {
+  --navy: #0B2545;
+  --navy-dark: #081A33;
+  --steel: #5C6B73;
+  --steel-light: #8A969C;
+  --bg: #F7F6F3;
+  --panel: #FFFFFF;
+  --amber: #C08A35;
+  --text: #1A1A1A;
+  --text-muted: #4B4B4B;
+  --border: #D8D5CC;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--navy);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus,
+button:focus {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Header / Nav ---------- */
+
+header.site-header {
+  background-color: var(--navy);
+  color: #FFFFFF;
+  padding: 18px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 4px solid var(--amber);
+}
+
+.site-title {
+  font-family: 'Oswald', Arial Narrow, sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.site-title a {
+  color: #FFFFFF;
+}
+
+.site-title a:hover {
+  text-decoration: none;
+  color: var(--amber);
+}
+
+nav.site-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+}
+
+nav.site-nav a {
+  display: inline-block;
+  color: #FFFFFF;
+  padding: 8px 14px;
+  font-family: 'Oswald', Arial Narrow, sans-serif;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  border-radius: 2px;
+}
+
+nav.site-nav a:hover {
+  background-color: var(--navy-dark);
+  text-decoration: none;
+  color: var(--amber);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  background-color: var(--navy-dark);
+  color: #FFFFFF;
+  padding: 64px 24px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero h1 {
+  font-family: 'Oswald', Arial Narrow, sans-serif;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 12px;
+}
+
+.hero p.tagline {
+  font-size: 1.05rem;
+  color: var(--steel-light);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ---------- Intro ---------- */
+
+.intro {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* ---------- Category sections ---------- */
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 48px;
+}
+
+section.category {
+  margin-top: 40px;
+}
+
+section.category h2 {
+  font-family: 'Oswald', Arial Narrow, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 1.3rem;
+  border-bottom: 3px solid var(--amber);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  color: var(--navy);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.aircraft-card {
+  background-color: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.aircraft-card:hover {
+  box-shadow: 0 4px 14px rgba(11, 37, 69, 0.18);
+  transform: translateY(-2px);
+}
+
+.aircraft-card a {
+  display: block;
+  color: var(--text);
+}
+
+.aircraft-card a:hover {
+  text-decoration: none;
+}
+
+.aircraft-card .thumb {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background-color: var(--steel-light);
+}
+
+.aircraft-card .card-body {
+  padding: 12px 14px;
+}
+
+.aircraft-card .card-body h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-family: 'Oswald', Arial Narrow, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.aircraft-card .card-body p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Detail page ---------- */
+
+.detail-header {
+  max-width: 1100px;
+  margin: 32px auto 0;
+  padding: 0 24px;
+}
+
+.detail-header h1 {
+  font-family: 'Oswald', Arial Narrow, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  margin: 0 0 4px;
+  color: var(--navy);
+}
+
+.detail-header .subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.detail-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 24px 48px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 700px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detail-grid img {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+/* Spec table styled like a data placard */
+
+.spec-plate {
+  background-color: var(--navy);
+  color: #FFFFFF;
+  border-radius: 4px;
+  padding: 16px 20px;
+  border: 2px solid var(--amber);
+}
+
+.spec-plate h2 {
+  font-family: 'Oswald', Arial Narrow, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+  margin: 0 0 12px;
+  color: var(--amber);
+}
+
+.spec-plate table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+}
+
+.spec-plate td {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.spec-plate td.label {
+  color: var(--steel-light);
+  width: 45%;
+}
+
+.spec-plate td.value {
+  text-align: right;
+  color: #FFFFFF;
+}
+
+.detail-main section.content-block {
+  margin-bottom: 28px;
+}
+
+.detail-main section.content-block h2 {
+  font-family: 'Oswald', Arial Narrow, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 1.15rem;
+  color: var(--navy);
+  border-left: 4px solid var(--amber);
+  padding-left: 10px;
+  margin: 0 0 10px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: 'Oswald', Arial Narrow, sans-serif;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+
+/* ---------- Footer ---------- */
+
+footer.site-footer {
+  background-color: var(--navy-dark);
+  color: var(--steel-light);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+}
+
+footer.site-footer a {
+  color: var(--amber);
+}
+
+/* ---------- Accessibility helper ---------- */
+
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
